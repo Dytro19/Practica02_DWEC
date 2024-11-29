@@ -1,3 +1,8 @@
-body{
+body {
+    background-image: url(Images/fondo.png);
     background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 98vh; /* Asegura que la imagen se centre verticalmente */
 }
