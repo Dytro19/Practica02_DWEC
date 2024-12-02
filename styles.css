@@ -9,11 +9,14 @@ body {
 
 .cesta {
     background-image: url(Images/cesta.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 200px;
     height: 200px;
     position: absolute;
-    top: 69%; /* Distancia desde arriba */
+    top: 70%; /* Distancia desde arriba */
     left: 50%; /* Distancia de los laterales */
-    transform: translate(-48%, -48%); /* Ajustar al centro */
+    transform: translate(-50%, -50%); /* Ajustar al centro */
     z-index: 2; /* Encima de la imagen de fondo */
 }
