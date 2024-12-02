@@ -1,8 +1,10 @@
 Dia 29 Noviembre:
     Naila:
         -Generacion de imagenes
+        -Ajuste de imagen "cesta" delante de la imagen "fondo"
 
     Alvaro:
         -Creacion de archivos
         -Creacion de repositorio
         -Creacion de fondo provisional
+        -Ajuste de imagen "fondo"
