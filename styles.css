@@ -1,22 +1,23 @@
 body {
-    background-image: url(Images/fondo.png);
+    background-image: url(Images/bg.png);
     background-color: black;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 98vh; /* Asegura que la imagen se centre verticalmente */
+    min-height: 98vh; /* Height center adjust */
 }
 
-.cesta {
-    background-image: url(Images/cesta.png);
+
+.basket {
+    background-image: url(Images/basket.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: 70%; /* Distancia desde arriba */
-    left: 50%; /* Distancia de los laterales */
-    transform: translate(-50%, -50%); /* Ajustar al centro */
-    z-index: 2; /* Encima de la imagen de fondo */
+    top: 80%; /* Distance from top */
+    left: 50%; /* Distance from laterals */
+    transform: translate(-50%, -50%); /* Center adjust */
+    z-index: 2; /* Image priority */
 }

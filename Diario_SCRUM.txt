@@ -8,3 +8,9 @@ Dia 29 Noviembre:
         -Creacion de repositorio
         -Creacion de fondo provisional
         -Ajuste de imagen "fondo"
+
+Dia 2 Diciembre:
+    Naila:
+
+    Alvaro:
+        -Programacion de movimiento de la cesta
