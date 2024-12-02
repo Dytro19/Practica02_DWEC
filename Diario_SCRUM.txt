@@ -5,3 +5,4 @@ Dia 29 Noviembre:
     Alvaro:
         -Creacion de archivos
         -Creacion de repositorio
+        -Creacion de fondo provisional
