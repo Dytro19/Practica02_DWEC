@@ -9,7 +9,7 @@ windowX=window.innerWidth-200;
 window.addEventListener("resize",()=>{
     windowX=window.innerWidth-200;
 
-})
+});
 
 //Window border X conditional
 moveX=true;
