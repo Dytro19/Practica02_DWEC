@@ -12,7 +12,8 @@ window.addEventListener("resize",()=>{
 });
 
 //Window border X conditional
-moveX=true;
+moveRight=true;
+moveLeft=true;
 
 //Literal object
 const objBasket={
@@ -31,8 +32,8 @@ const objBasket={
                 //Right movement
                 case "ArrowRight": case "d":
 
-                    //Window colider X conditional
-                    if(moveX==true && X<=windowX){
+                    //Window colider Right conditional
+                    if(moveRight==true){
                         console.log(X);
                         console.log(windowX);
                         X+=0.5;
@@ -44,8 +45,8 @@ const objBasket={
                 //Left movement
                 case "ArrowLeft": case "a":
 
-                    //Window colider X conditional
-                    if(moveX==true){
+                    //Window colider Left conditional
+                    if(moveLeft==true){
                         X-=0.5;
                         basket.style.marginLeft=X+"%";
                         colider();
@@ -60,13 +61,21 @@ const objBasket={
 function colider(){
 
     //Right border
-    if (windowX <= X){
-        moveX = true;
+    if (windowX >= X){
+        moveRight = true;
+    }
+
+    else{
+        moveRight = false;
     }
 
     //Left border
     if (windowX >= X){
-        moveX = false;
+        moveLeft = true;
+    }
+
+    else{
+        moveLeft = false;
     }
 }
 
