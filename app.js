@@ -80,3 +80,24 @@ function colider(){
 
 //Movement ejecution
 objBasket.moveBasket();
+
+function fruits(){
+    const fruitsImages = [
+        'Images/orange.png',
+        'Images/banana.png',
+        'Images/pineapple.png',
+        'Images/strawberry.png',
+        'Images/watermelon.png',
+        'Images/rock.png',
+    ];
+
+    const randomImage = fruitsImages[Math.floor(Math.random() * fruitsImages.length)];
+
+    let fallingInterval = setInterval(() => {
+        const currentTop = parseInt(fruits.style.top); // Get the current top position
+        fruits.style.top = currentTop + 5 + 'px'; // Move the fruit down
+    }, 30);
+    
+    // Generate fruits periodically
+    setInterval(createFruit, 1000);
+}
