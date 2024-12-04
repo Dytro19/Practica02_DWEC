@@ -5,6 +5,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 98vh; /* Height center adjust */
+    
 }
 
 
@@ -20,4 +21,21 @@ body {
     left: 50%; /* Distance from laterals */
     transform: translate(-50%, -50%); /* Center adjust */
     z-index: 2; /* Image priority */
+    min-height: 98vh; /* Height center adjust */
+}
+
+/*Controls*/
+.controls{
+    border: 2px solid white;
+    border-radius: 10px;
+    position: fixed;
+    padding-right: 30px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    right: 2%;
+    bottom: 2%;
+    color: white;
+    background-color: black;
+    scale: 1.1;
+
 }
