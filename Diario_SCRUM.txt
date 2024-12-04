@@ -17,6 +17,6 @@ Dia 2 Diciembre:
 
 Dia 4 Diciembre:
     Naila:
-
+        -Programacion de la caída de frutas
     Alvaro:
         -Colisiones de ventana
