@@ -21,7 +21,6 @@ body {
     left: 50%; /* Distance from laterals */
     transform: translate(-50%, -50%); /* Center adjust */
     z-index: 2; /* Image priority */
-    min-height: 98vh; /* Height center adjust */
 }
 
 /*Controls*/
@@ -32,8 +31,8 @@ body {
     padding-right: 30px;
     padding-left: 10px;
     padding-bottom: 20px;
-    right: 2%;
-    bottom: 2%;
+    right: 2.5%;
+    bottom: 2.5%;
     color: white;
     background-color: black;
     scale: 1.1;
