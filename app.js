@@ -105,7 +105,7 @@ function fruits(){
             if (currentTop < window.innerHeight - 50) { //50px is the size of the fruit
                 fruits.style.top = currentTop + 5 + 'px'; //move the fruit down
             } else {
-                fruits.style.top = '0px'; //If it reaches the bottom, reset it to the top
+                fruits.style.top = '0px'; //if it reaches the bottom, reset it to the top
             }
         }
     }
