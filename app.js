@@ -34,8 +34,7 @@ const objBasket={
 
                     //Window colider Right conditional
                     if(moveRight==true){
-                        console.log(X);
-                        X+=0.5;
+                        X+=0.25;
                         basket.style.marginLeft=X+"%";
                         colider();
                         break;
@@ -46,8 +45,7 @@ const objBasket={
 
                     //Window colider Left conditional
                     if(moveLeft==true){
-                        console.log(X);
-                        X-=0.5;
+                        X-=0.25;
                         basket.style.marginLeft=X+"%";
                         colider();
                         break;
@@ -61,7 +59,7 @@ const objBasket={
 function colider(){
 
     //Window border
-    if (X<=23){
+    if (X<=(22.75)){
         moveRight = true;
     }
 
