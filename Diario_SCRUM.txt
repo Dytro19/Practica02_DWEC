@@ -20,3 +20,7 @@ Dia 4 Diciembre:
 
     Alvaro:
         -Colisiones de ventana
+
+    /*Objetivos Hoy*/
+        --Ajustar correctamente Bordes de ventana
+        --Leyenda de controles
