@@ -7,7 +7,7 @@ windowX=window.innerWidth-200;
 
 //Window resize
 window.addEventListener("resize",()=>{
-    windowX=window.innerWidth-200;
+    windowX=window.innerWidth-1100;
 
 });
 
@@ -61,7 +61,7 @@ const objBasket={
 function colider(){
 
     //Right border
-    if (windowX >= X){
+    if (X<=23){
         moveRight = true;
     }
 

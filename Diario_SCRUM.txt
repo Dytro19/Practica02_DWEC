@@ -11,6 +11,6 @@ Dia 29 Noviembre:
 
 Dia 2 Diciembre:
     Naila:
-
+        -Cambio de nombres a las imagenes
     Alvaro:
         -Programacion de movimiento de la cesta
