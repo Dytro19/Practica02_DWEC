@@ -13,7 +13,7 @@ window.addEventListener("resize",()=>{
 
 //Window border X conditional
 moveRight=true;
-moveLeft=true;
+movwLeft=true;
 
 //Literal object
 const objBasket={
@@ -35,7 +35,6 @@ const objBasket={
                     //Window colider Right conditional
                     if(moveRight==true){
                         console.log(X);
-                        console.log(windowX);
                         X+=0.5;
                         basket.style.marginLeft=X+"%";
                         colider();
@@ -47,6 +46,7 @@ const objBasket={
 
                     //Window colider Left conditional
                     if(moveLeft==true){
+                        console.log(X);
                         X-=0.5;
                         basket.style.marginLeft=X+"%";
                         colider();
@@ -60,7 +60,7 @@ const objBasket={
 //Window colider X
 function colider(){
 
-    //Right border
+    //Window border
     if (X<=23){
         moveRight = true;
     }
@@ -69,11 +69,10 @@ function colider(){
         moveRight = false;
     }
 
-    //Left border
-    if (windowX >= X){
+    if (X>=(-23)){
         moveLeft = true;
     }
-
+    
     else{
         moveLeft = false;
     }

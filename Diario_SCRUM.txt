@@ -19,3 +19,4 @@ Dia 4 Diciembre:
     Naila:
 
     Alvaro:
+        -Colisiones de ventana
