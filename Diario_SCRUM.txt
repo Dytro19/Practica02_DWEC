@@ -18,6 +18,10 @@ Dia 2 Diciembre:
 Dia 4 Diciembre:
     Naila:
         -Programacion de la caída de frutas
+
+    /*Objetivos Hoy*/
+        --Que aparezcan las frutas y que caigan, que cuando toquen la cesta desaparezcan.
+
     Alvaro:
         -Colisiones de ventana
 
