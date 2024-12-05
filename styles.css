@@ -4,8 +4,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 98vh; /* Height center adjust */
-    
+    min-height: 98vh; /* Height center adjust */    
 }
 
 
@@ -21,6 +20,7 @@ body {
     left: 50%; /* Distance from laterals */
     transform: translate(-50%, -50%); /* Center adjust */
     z-index: 2; /* Image priority */
+    border: 2px solid ;
 }
 
 /*Controls*/
@@ -36,7 +36,7 @@ body {
     color: white;
     background-color: black;
     scale: 1.1;
-
+    z-index: 3;
 }
 
 .fruits {

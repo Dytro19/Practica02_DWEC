@@ -29,17 +29,6 @@ const objBasket={
             //Movement conditions
             switch (event.key){
 
-                //Right movement
-                case "ArrowRight": case "d":
-
-                    //Window colider Right conditional
-                    if(moveRight==true){
-                        X+=0.25;
-                        basket.style.marginLeft=X+"%";
-                        colider();
-                        break;
-                    }
-
                 //Left movement
                 case "ArrowLeft": case "a":
 
@@ -48,8 +37,19 @@ const objBasket={
                         X-=0.25;
                         basket.style.marginLeft=X+"%";
                         colider();
-                        break;
                     }
+                    break;
+
+                //Right movement
+                case "ArrowRight": case "d":
+
+                    //Window colider Right conditional
+                    if(moveRight==true){
+                        X+=0.25;
+                        basket.style.marginLeft=X+"%";
+                        colider();
+                    }
+                    break;
             }
         });
     },
