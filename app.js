@@ -13,7 +13,7 @@ window.addEventListener("resize",()=>{
 
 //Window border X conditional
 moveRight=true;
-movwLeft=true;
+moveLeft=true;
 
 //Literal object
 const objBasket={
