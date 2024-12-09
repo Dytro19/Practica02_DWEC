@@ -2,6 +2,9 @@
 let X=0;
 let Y=0;
 
+//Start button
+startbtn=document.getElementById("buttonStart");
+
 //Window border X
 windowX=window.innerWidth-200;
 
@@ -17,14 +20,13 @@ moveLeft=true;
 
 //Literal object
 const objBasket={
+    id: document.getElementById("basket"),
 
     //Movement function
     moveBasket(){
 
         //Key event
         document.addEventListener("keydown", (event)=>{
-
-            const basket=document.getElementById("basket");
 
             //Movement conditions
             switch (event.key){
@@ -76,9 +78,6 @@ function colider(){
     }
 }
 
-//Movement ejecution
-objBasket.moveBasket();
-
 //create random falling fruits
 function fruits(){
     const fruitsImages = [
@@ -112,5 +111,21 @@ function fruits(){
     setInterval(fruitsFall, 30);
 }
 
-//call the function to start
-fruits();
+
+//Start button
+startbtn.addEventListener("click",()=>{
+
+    document.getElementById("start").style.display="none";
+    start();
+})
+
+//All execution
+function start(){
+
+    //Movement ejecution
+    objBasket.moveBasket();
+
+    //call the function to start
+    fruits();
+
+}
