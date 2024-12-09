@@ -91,7 +91,7 @@ function fruits() {
     ];
 
     const fruitsCount = 6; //number of fruits
-    const fruitWidth = 50; //width of each fruit
+    const fruitWidth = 50; //width of the fruits
     const spacing = 100; //horizontal spacing between fruits
 
     //initialize the positions of the fruits
@@ -102,13 +102,13 @@ function fruits() {
         fruit.style.top = '0px'; //ensure they start at the top
     }
 
-    //function to make the fruits fall
+    // Function to make the fruits fall
     function fruitsFall() {
         for (let i = 1; i <= fruitsCount; i++) {
             const fruit = document.getElementById(`fruit${i}`);
             let currentTop = parseInt(fruit.style.top) || 0;
 
-            if (currentTop < window.innerHeight - fruitWidth) { //50px is the fruit's size
+            if (currentTop < window.innerHeight - fruitWidth) { //50px is the size of the fruit
                 fruit.style.top = currentTop + 5 + 'px'; //move the fruit down
             } else {
                 fruit.style.top = '0px'; //reset to the top
@@ -122,5 +122,8 @@ function fruits() {
 
 //call the function to start
 fruits();
+
+
+
 
 
