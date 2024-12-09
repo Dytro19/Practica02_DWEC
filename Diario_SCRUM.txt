@@ -28,3 +28,11 @@ Dia 4 Diciembre:
     /*Objetivos Hoy*/
         --Ajustar correctamente Bordes de ventana
         --Leyenda de controles
+
+Dia 9 Diciembre:
+    Naila:
+        -Programación de la caída de frutas aleatoriamente
+        -Desaparición de fruta al atraparla con la cesta
+        -Colisión con la imagen "piedra"
+
+    Alvaro:
