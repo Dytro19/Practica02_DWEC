@@ -5,6 +5,12 @@ let Y = 0;
 // Window border X
 windowX = window.innerWidth - 200;
 
+//Start button
+startbtn=document.getElementById("buttonStart");
+
+//Window border X
+windowX=window.innerWidth-200;
+
 // Window resize
 window.addEventListener("resize", () => {
     windowX = window.innerWidth - 1100;
@@ -14,8 +20,9 @@ window.addEventListener("resize", () => {
 moveRight = true;
 moveLeft = true;
 
-// Literal object
-const objBasket = {
+//Literal object
+const objBasket={
+    id: document.getElementById("basket"),
 
     // Movement function
     moveBasket() {
@@ -157,13 +164,20 @@ function fruits() {
     const fallInterval = setInterval(fallFruit, 20);
 }
 
-//call the function to start
-fruits();
+//Start button
+startbtn.addEventListener("click",()=>{
 
+    document.getElementById("start").style.display="none";
+    start();
+})
 
+//All execution
+function start(){
 
+    //Movement ejecution
+    objBasket.moveBasket();
 
+    //call the function to start
+    fruits();
 
-
-
-
+}
