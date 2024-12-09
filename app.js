@@ -80,7 +80,7 @@ function colider(){
 objBasket.moveBasket();
 
 //create random falling fruits
-function fruits(){
+function fruits() {
     const fruitsImages = [
         'Images/orange.png',
         'Images/banana.png',
@@ -90,27 +90,37 @@ function fruits(){
         'Images/rock.png',
     ];
 
-    const fruitsCount=6; //fruits id's
+    const fruitsCount = 6; //number of fruits
+    const fruitWidth = 50; //width of each fruit
+    const spacing = 100; //horizontal spacing between fruits
 
+    //initialize the positions of the fruits
+    const startX = (window.innerWidth / 2) - ((fruitsCount - 1) * spacing) / 2; //initial centered position
+    for (let i = 1; i <= fruitsCount; i++) {
+        const fruit = document.getElementById(`fruit${i}`);
+        fruit.style.left = `${startX + (i - 1) * spacing}px`; //uniform spacing from the center
+        fruit.style.top = '0px'; //ensure they start at the top
+    }
+
+    //function to make the fruits fall
     function fruitsFall() {
         for (let i = 1; i <= fruitsCount; i++) {
-            const fruits = document.getElementById(`fruits${i}`);
-            let currentTop = parseInt(fruits.style.top);
+            const fruit = document.getElementById(`fruit${i}`);
+            let currentTop = parseInt(fruit.style.top) || 0;
 
-            //change the fruit image randomly
-            const randomImage = fruitsImages[Math.floor(Math.random() * fruitsImages.length)];
-
-            //access the image inside the div
-            const imgElement = document.getElementById(`fruits${i}-img`);
-            if (currentTop < window.innerHeight - 50) { //50px is the size of the fruit
-                fruits.style.top = currentTop + 5 + 'px'; //move the fruit down
+            if (currentTop < window.innerHeight - fruitWidth) { //50px is the fruit's size
+                fruit.style.top = currentTop + 5 + 'px'; //move the fruit down
             } else {
-                fruits.style.top = '0px'; //if it reaches the bottom, reset it to the top
+                fruit.style.top = '0px'; //reset to the top
+                fruit.src = fruitsImages[Math.floor(Math.random() * fruitsImages.length)]; //change image randomly
             }
         }
     }
+
     setInterval(fruitsFall, 30);
 }
 
 //call the function to start
 fruits();
+
+
