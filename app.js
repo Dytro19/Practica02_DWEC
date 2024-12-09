@@ -92,36 +92,72 @@ function fruits() {
 
     const fruitsCount = 6; //number of fruits
     const fruitWidth = 50; //width of the fruits
-    const spacing = 100; //horizontal spacing between fruits
+    const fruitHeight = 50; //height of the fruits
+    const fruitSpacing = 100; //horizontal space between fruits
 
-    //initialize the positions of the fruits
-    const startX = (window.innerWidth / 2) - ((fruitsCount - 1) * spacing) / 2; //initial centered position
+    //initializing fruit positions in the center horizontally
+    const startX = (window.innerWidth / 2) - ((fruitsCount - 1) * fruitSpacing) / 2; //center the fruits
+    const fruitsElements = [];
     for (let i = 1; i <= fruitsCount; i++) {
         const fruit = document.getElementById(`fruit${i}`);
-        fruit.style.left = `${startX + (i - 1) * spacing}px`; //uniform spacing from the center
-        fruit.style.top = '0px'; //ensure they start at the top
+        fruit.style.left = `${startX + (i - 1) * fruitSpacing}px`; //spacing uniformly
+        fruit.style.top = '0px'; //start at the top
+        fruitsElements.push(fruit);
     }
 
-    // Function to make the fruits fall
-    function fruitsFall() {
-        for (let i = 1; i <= fruitsCount; i++) {
-            const fruit = document.getElementById(`fruit${i}`);
-            let currentTop = parseInt(fruit.style.top) || 0;
+    const basket = document.getElementById('basket');
+    const basketWidth = basket.offsetWidth;
+    const basketHeight = basket.offsetHeight;
+    const basketY = window.innerHeight - basketHeight;
 
-            if (currentTop < window.innerHeight - fruitWidth) { //50px is the size of the fruit
-                fruit.style.top = currentTop + 5 + 'px'; //move the fruit down
-            } else {
-                fruit.style.top = '0px'; //reset to the top
+    //function to make a random fruit fall
+    function fallFruit() {
+        //select a random fruit to fall
+        const randomFruit = Math.floor(Math.random() * fruitsCount);
+        const fruit = fruitsElements[randomFruit];
+        let currentTop = parseInt(fruit.style.top) || 0;
+
+        if (currentTop < window.innerHeight - fruitHeight) { //if fruit hasn't reached the bottom
+            fruit.style.top = currentTop + 5 + 'px'; //move fruit down
+        } else {
+            //reset to the top if fruit reaches bottom
+            fruit.style.top = '0px';
+            fruit.src = fruitsImages[Math.floor(Math.random() * fruitsImages.length)]; //randomize image
+        }
+
+        //check for collision with the basket
+        checkCollision(fruit);
+    }
+
+    //function to check if a fruit has collided with the basket
+    function checkCollision(fruit) {
+        const fruitX = parseInt(fruit.style.left);
+        const fruitY = parseInt(fruit.style.top) + fruitHeight;
+
+        //check if the fruit is inside the basket area (horizontal and vertical collision)
+        if (fruitY >= basketY && fruitY <= basketY + basketHeight &&
+            fruitX + fruitWidth / 2 >= basket.offsetLeft &&
+            fruitX + fruitWidth / 2 <= basket.offsetLeft + basketWidth) {
+            //when fruit touches the basket, hide the fruit
+            fruit.style.display = 'none'; //hide the fruit
+
+            //after a short delay, reset the fruit to the top and make it visible again
+            setTimeout(() => {
+                fruit.style.display = 'block'; //make the fruit visible again
+                fruit.style.top = '0px'; //reset fruit to the top
                 fruit.src = fruitsImages[Math.floor(Math.random() * fruitsImages.length)]; //change image randomly
-            }
+            }, 20);
         }
     }
 
-    setInterval(fruitsFall, 30);
+    setInterval(fallFruit, 20);
 }
 
 //call the function to start
 fruits();
+
+
+
 
 
 
