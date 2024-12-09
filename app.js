@@ -1,52 +1,51 @@
-//Position variables
-let X=0;
-let Y=0;
+// Position variables
+let X = 0;
+let Y = 0;
 
-//Window border X
-windowX=window.innerWidth-200;
+// Window border X
+windowX = window.innerWidth - 200;
 
-//Window resize
-window.addEventListener("resize",()=>{
-    windowX=window.innerWidth-1100;
-
+// Window resize
+window.addEventListener("resize", () => {
+    windowX = window.innerWidth - 1100;
 });
 
-//Window border X conditional
-moveRight=true;
-moveLeft=true;
+// Window border X conditional
+moveRight = true;
+moveLeft = true;
 
-//Literal object
-const objBasket={
+// Literal object
+const objBasket = {
 
-    //Movement function
-    moveBasket(){
+    // Movement function
+    moveBasket() {
 
-        //Key event
-        document.addEventListener("keydown", (event)=>{
+        // Key event
+        document.addEventListener("keydown", (event) => {
 
-            const basket=document.getElementById("basket");
+            const basket = document.getElementById("basket");
 
-            //Movement conditions
-            switch (event.key){
+            // Movement conditions
+            switch (event.key) {
 
-                //Left movement
+                // Left movement
                 case "ArrowLeft": case "a":
 
-                    //Window colider Left conditional
-                    if(moveLeft==true){
-                        X-=0.25;
-                        basket.style.marginLeft=X+"%";
+                    // Window colider Left conditional
+                    if (moveLeft == true) {
+                        X -= 0.25;
+                        basket.style.marginLeft = X + "%";
                         colider();
                     }
                     break;
 
-                //Right movement
+                // Right movement
                 case "ArrowRight": case "d":
 
-                    //Window colider Right conditional
-                    if(moveRight==true){
-                        X+=0.25;
-                        basket.style.marginLeft=X+"%";
+                    // Window colider Right conditional
+                    if (moveRight == true) {
+                        X += 0.25;
+                        basket.style.marginLeft = X + "%";
                         colider();
                     }
                     break;
@@ -55,28 +54,24 @@ const objBasket={
     },
 }
 
-//Window colider X
-function colider(){
+// Window colider X
+function colider() {
 
-    //Window border
-    if (X<=(22.75)){
+    // Window border
+    if (X <= (22.75)) {
         moveRight = true;
-    }
-
-    else{
+    } else {
         moveRight = false;
     }
 
-    if (X>=(-23)){
+    if (X >= (-23)) {
         moveLeft = true;
-    }
-    
-    else{
+    } else {
         moveLeft = false;
     }
 }
 
-//Movement ejecution
+// Movement execution
 objBasket.moveBasket();
 
 //create random falling fruits
@@ -138,6 +133,15 @@ function fruits() {
         if (fruitY >= basketY && fruitY <= basketY + basketHeight &&
             fruitX + fruitWidth / 2 >= basket.offsetLeft &&
             fruitX + fruitWidth / 2 <= basket.offsetLeft + basketWidth) {
+
+            //check if the fruit is a rock
+            if (fruit.src.includes('rock')) {
+                //show GAME OVER message
+                alert("GAME OVER");
+                //reset the game or stop fruit fall
+                clearInterval(fallInterval);
+            }
+
             //when fruit touches the basket, hide the fruit
             fruit.style.display = 'none'; //hide the fruit
 
@@ -150,7 +154,7 @@ function fruits() {
         }
     }
 
-    setInterval(fallFruit, 20);
+    const fallInterval = setInterval(fallFruit, 20);
 }
 
 //call the function to start
