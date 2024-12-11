@@ -36,3 +36,4 @@ Dia 9 Diciembre:
         -Colisión con la imagen "piedra"
 
     Alvaro:
+        
