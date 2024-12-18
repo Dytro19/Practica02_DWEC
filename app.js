@@ -77,10 +77,6 @@ function colider() {
         moveLeft = false;
     }
 }
-
-// Movement execution
-objBasket.moveBasket();
-
 //create random falling fruits
 function fruits() {
     const fruitsImages = [
@@ -170,6 +166,17 @@ startbtn.addEventListener("click",()=>{
     document.getElementById("start").style.display="none";
     start();
 })
+
+
+
+
+
+
+
+
+
+
+
 
 //All execution
 function start(){
