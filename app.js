@@ -8,9 +8,6 @@ windowX = window.innerWidth - 200;
 //Start button
 startbtn=document.getElementById("buttonStart");
 
-//Window border X
-windowX=window.innerWidth-200;
-
 // Window resize
 window.addEventListener("resize", () => {
     windowX = window.innerWidth - 1100;
@@ -43,6 +40,7 @@ const objBasket={
                         X -= 0.25;
                         basket.style.marginLeft = X + "%";
                         colider();
+                        console.log(X);
                     }
                     break;
 
@@ -54,6 +52,7 @@ const objBasket={
                         X += 0.25;
                         basket.style.marginLeft = X + "%";
                         colider();
+                        console.log(X);
                     }
                     break;
             }
@@ -65,13 +64,13 @@ const objBasket={
 function colider() {
 
     // Window border
-    if (X <= (22.75)) {
+    if (X <= (16.5)) {
         moveRight = true;
     } else {
         moveRight = false;
     }
 
-    if (X >= (-23)) {
+    if (X >= (-16.75)) {
         moveLeft = true;
     } else {
         moveLeft = false;
