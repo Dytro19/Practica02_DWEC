@@ -43,4 +43,4 @@ Dia 5:
 
 
     Alvaro:
-        -
+        -Colisiones de ventana corregidas
