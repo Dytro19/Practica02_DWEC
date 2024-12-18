@@ -1,4 +1,4 @@
-Dia 29 Noviembre:
+Dia 1:
     Naila:
         -Generacion de imagenes
         -Ajuste de imagen "cesta" delante de la imagen "fondo"
@@ -9,13 +9,13 @@ Dia 29 Noviembre:
         -Creacion de fondo provisional
         -Ajuste de imagen "fondo"
 
-Dia 2 Diciembre:
+Dia 2:
     Naila:
         -Cambio de nombres a las imagenes
     Alvaro:
         -Programacion de movimiento de la cesta
 
-Dia 4 Diciembre:
+Dia 3:
     Naila:
         -Programacion de la caída de frutas
 
@@ -29,11 +29,11 @@ Dia 4 Diciembre:
         --Ajustar correctamente Bordes de ventana
         --Leyenda de controles
 
-Dia 9 Diciembre:
+Dia 4:
     Naila:
         -Programación de la caída de frutas aleatoriamente
         -Desaparición de fruta al atraparla con la cesta
         -Colisión con la imagen "piedra"
 
     Alvaro:
-        
+        -Ventana de inicio
