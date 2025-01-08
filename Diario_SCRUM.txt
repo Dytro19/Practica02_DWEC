@@ -44,3 +44,9 @@ Dia 5:
 
     Alvaro:
         -Colisiones de ventana corregidas
+
+Dia 6:
+    Naila:
+        -Corrección de colisión con la imagen "piedra"
+
+    Alvaro:
