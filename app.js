@@ -142,6 +142,7 @@ function fruits() {
                 alert("GAME OVER");
                 //reset the game or stop fruit fall
                 clearInterval(fallInterval);
+                return;
             }
 
             //when fruit touches the basket, hide the fruit
