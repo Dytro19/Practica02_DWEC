@@ -176,7 +176,7 @@ startbtn.addEventListener("click",()=>{
 
 // Score update
 function scoreUpdate(){
-    score += 1;
+    score += 100;
     console.log("Score updated: " + score);
     document.getElementById("Score").innerHTML ="Score: "+ score;
 }
