@@ -5,7 +5,7 @@ let Y = 0;
 // Window border X
 windowX = window.innerWidth - 200;
 
-//Start button
+// Start button
 startbtn=document.getElementById("buttonStart");
 
 // Window resize
@@ -16,6 +16,9 @@ window.addEventListener("resize", () => {
 // Window border X conditional
 moveRight = true;
 moveLeft = true;
+
+// Score
+var score = 0;
 
 //Literal object
 const objBasket={
@@ -37,10 +40,9 @@ const objBasket={
 
                     // Window colider Left conditional
                     if (moveLeft == true) {
-                        X -= 0.25;
+                        X -= 0.5;
                         basket.style.marginLeft = X + "%";
                         colider();
-                        console.log(X);
                     }
                     break;
 
@@ -49,10 +51,9 @@ const objBasket={
 
                     // Window colider Right conditional
                     if (moveRight == true) {
-                        X += 0.25;
+                        X += 0.5;
                         basket.style.marginLeft = X + "%";
                         colider();
-                        console.log(X);
                     }
                     break;
             }
@@ -70,7 +71,7 @@ function colider() {
         moveRight = false;
     }
 
-    if (X >= (-16.75)) {
+    if (X >= (-16.5)) {
         moveLeft = true;
     } else {
         moveLeft = false;
@@ -86,8 +87,8 @@ function fruits() {
         'Images/rock.png',
     ];
 
-    const fruitWidth = 50; //width of the fruits
-    const fruitHeight = 50; //height of the fruits
+    const fruitWidth = 50; // Width of the fruits
+    const fruitHeight = 50; // Height of the fruits
 
     const basket = document.getElementById('basket');
     const basketWidth = basket.offsetWidth;
@@ -101,7 +102,7 @@ function fruits() {
         fruit.style.position = 'absolute';
         fruit.style.width = `${fruitWidth}px`;
         fruit.style.height = `${fruitHeight}px`;
-        fruit.style.left = `${Math.random() * (window.innerWidth - fruitWidth)}px`;
+        fruit.style.left = `${Math.random() * (window.innerWidth - 300 - fruitWidth)}px`;
         fruit.style.top = '0px';
         document.body.appendChild(fruit);
         return fruit;
@@ -111,8 +112,8 @@ function fruits() {
     function fallFruit(fruit) {
         const fallInterval = setInterval(() => {
             let currentTop = parseInt(fruit.style.top) || 0;
-            if (currentTop < window.innerHeight - fruitHeight) { // if fruit hasn't reached the bottom
-                fruit.style.top = currentTop + 5 + 'px'; // move fruit down
+            if (currentTop < window.innerHeight - 5 - fruitHeight) { // If fruit hasn't reached the bottom
+                fruit.style.top = currentTop + 5 + 'px'; // Move fruit down
             } else {
                 // Remove fruit if it reaches the bottom
                 document.body.removeChild(fruit);
@@ -146,13 +147,19 @@ function fruits() {
             }
 
             // When fruit touches the basket, hide the fruit
-            fruit.style.display = 'none'; // hide the fruit
+            if (!fruit.counted) { // Check if the fruit has already been counted
+                fruit.style.display = 'none'; // hide the fruit
 
-            // After a short delay, remove the fruit and create a new one
-            setTimeout(() => {
-                document.body.removeChild(fruit);
-                fallFruit(createFruit());
-            }, 20);
+                // Update the score
+                scoreUpdate();
+                fruit.counted = true; // Mark the fruit as counted
+
+                // Remove the fruit from the DOM to prevent multiple collisions
+                setTimeout(() => {
+                    document.body.removeChild(fruit);
+                    fallFruit(createFruit());
+                }, 20);
+            }
         }
     }
 
@@ -160,14 +167,19 @@ function fruits() {
     fallFruit(createFruit());
 }
 
-//Start button
+// Start button
 startbtn.addEventListener("click",()=>{
 
     document.getElementById("start").style.display="none";
     start();
 })
 
-
+// Score update
+function scoreUpdate(){
+    score += 1;
+    console.log("Score updated: " + score);
+    document.getElementById("Score").innerHTML ="Score: "+ score;
+}
 
 
 
@@ -184,7 +196,7 @@ function start(){
     //Movement ejecution
     objBasket.moveBasket();
 
-    //call the function to start
+    //Call the function to start
     fruits();
 
 }

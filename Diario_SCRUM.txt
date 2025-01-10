@@ -50,3 +50,4 @@ Dia 6:
         -Corrección de colisión con la imagen "piedra"
 
     Alvaro:
+        -Caida de frutas corregidas, ahora caen de 1 en 1
