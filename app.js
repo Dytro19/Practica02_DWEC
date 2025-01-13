@@ -103,7 +103,13 @@ function fruits() {
         fruit.style.position = 'absolute';
         fruit.style.width = `${fruitWidth}px`;
         fruit.style.height = `${fruitHeight}px`;
-        fruit.style.left = `${Math.random() * (window.innerWidth - 512 - fruitWidth)}px`;
+
+        // Calculate the left position to ensure the fruit is within the basket's limits
+        const basketLeft = basket.offsetLeft;
+
+        // Generate a random position within the basket's limits
+        const randomX = Math.random() * (basketWidth - fruitWidth); // Random position within the basket width
+        fruit.style.left = `${basketLeft + randomX}px`; // Adjust position based on basket's left position
         fruit.style.top = '0px';
         document.body.appendChild(fruit);
         return fruit;
