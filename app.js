@@ -77,6 +77,7 @@ function colider() {
         moveLeft = false;
     }
 }
+
 function fruits() {
     const fruitsImages = [
         'Images/orange.png',
@@ -102,7 +103,7 @@ function fruits() {
         fruit.style.position = 'absolute';
         fruit.style.width = `${fruitWidth}px`;
         fruit.style.height = `${fruitHeight}px`;
-        fruit.style.left = `${Math.random() * (window.innerWidth - 300 - fruitWidth)}px`;
+        fruit.style.left = `${Math.random() * (window.innerWidth - 512 - fruitWidth)}px`;
         fruit.style.top = '0px';
         document.body.appendChild(fruit);
         return fruit;
