@@ -81,6 +81,7 @@ function colider() {
     }
 }
 
+//fruit management function
 function fruits() {
     const fruitsImages = [
         'Images/orange.png',
@@ -99,7 +100,7 @@ function fruits() {
     const basketHeight = basket.offsetHeight;
     const basketY = window.innerHeight - basketHeight;
 
-    // Function to create a new fruit element
+    // Function to create a new fruit
     function createFruit() {
         const fruit = document.createElement('img');
         fruit.src = fruitsImages[Math.floor(Math.random() * fruitsImages.length)];
@@ -182,7 +183,6 @@ function fruits() {
     // Function to lose a life
     function loseLife() {
         lives--; // Decrease lives
-        console.log("Lives left: " + lives);
         updateHearts();
         
         if (lives <= 0) {
