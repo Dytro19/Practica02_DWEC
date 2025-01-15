@@ -47,7 +47,6 @@ body {
     left: 50%; /* Distance from laterals */
     transform: translate(-50%, -50%); /* Center adjust */
     z-index: 2; /* Image priority */
-    border: 2px solid ;
 }
 
 /*Controls*/
