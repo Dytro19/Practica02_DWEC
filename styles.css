@@ -73,3 +73,12 @@ body {
     animation: fall linear 5s;
     z-index: 2;
 }
+
+.lives{
+    position: absolute; 
+    top: 5.5%;
+    right: 12.5%;
+    display: flex;
+    width: 50px; 
+    height: 50px;
+}

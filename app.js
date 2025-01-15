@@ -20,6 +20,9 @@ moveLeft = true;
 // Score
 var score = 0;
 
+//lives
+var lives = 3;
+
 //Literal object
 const objBasket={
     id: document.getElementById("basket"),
@@ -125,13 +128,19 @@ function fruits() {
                 // Remove fruit if it reaches the bottom
                 document.body.removeChild(fruit);
                 clearInterval(fallInterval);
+
+                // Check if the fruit is not a rock
+                if (!fruit.src.includes('rock')) {
+                    loseLife(); // Lose a life if it's a fruit
+                }
+
                 // Create a new fruit
                 fallFruit(createFruit());
             }
 
             // Check for collision with the basket
             checkCollision(fruit, fallInterval);
-        }, 20);
+        }, 30);
     }
 
     // Function to check if a fruit has collided with the basket
@@ -166,6 +175,35 @@ function fruits() {
                     document.body.removeChild(fruit);
                     fallFruit(createFruit());
                 }, 20);
+            }
+        }
+    }
+
+    // Function to lose a life
+    function loseLife() {
+        lives--; // Decrease lives
+        console.log("Lives left: " + lives);
+        updateHearts();
+        
+        if (lives <= 0) {
+            setTimeout(() => {
+                alert("GAME OVER");
+            }, 100);
+
+            // Reset the game or stop fruit fall
+            clearInterval(fallInterval);
+            return;
+        }
+    }
+
+    // Function to update heart display
+    function updateHearts() {
+        for (let i = 1; i <= 3; i++) {
+            const heart = document.getElementById(`heart${i}`);
+            if (i > lives) {
+                heart.style.display = 'none'; // Hide heart if life is lost
+            } else {
+                heart.style.display = 'block'; // Show heart if life is remaining
             }
         }
     }
