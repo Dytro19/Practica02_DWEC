@@ -157,7 +157,7 @@ function fruits() {
             // Check if the fruit is a rock
             if (fruit.src.includes('rock')) {
                 // Show GAME OVER message
-                alert("GAME OVER");
+                  alert("GAME OVER");
                 // Reset the game or stop fruit fall
                 clearInterval(fallInterval);
                 return;
